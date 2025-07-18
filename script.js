@@ -1,22 +1,19 @@
 const welcome = document.getElementById("welcome");
 
-let x = Math.random() * window.innerWidth;
-let y = Math.random() * window.innerHeight;
-let dx = 0.0005;
-let dy = 0.0005;
+// Starting position (centered)
+let x = window.innerWidth / 2;
+let y = window.innerHeight / 2;
+
+// Direction & speed (slow)
+let dx = 0.8;
+let dy = 0.8;
 
 function animate() {
   const rect = welcome.getBoundingClientRect();
 
-  // Bounce off left/right
-  if (x + rect.width >= window.innerWidth || x <= 0) {
-    dx *= -1;
-  }
-
-  // Bounce off top/bottom
-  if (y + rect.height >= window.innerHeight || y <= 0) {
-    dy *= -1;
-  }
+  // Bounce off walls
+  if (x + rect.width >= window.innerWidth || x <= 0) dx *= -1;
+  if (y + rect.height >= window.innerHeight || y <= 0) dy *= -1;
 
   x += dx;
   y += dy;
@@ -27,4 +24,5 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
+// Start animation loop only ONCE
 animate();
