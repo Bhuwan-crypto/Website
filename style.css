@@ -16,13 +16,10 @@ body {
   white-space: nowrap;
   user-select: none;
 
-  /* Rainbow glow animation */
   animation: rainbowGlow 10s ease-in-out infinite;
 
-  /* Initial color */
   color: #ff0000;
 
-  /* Text shadow for glow */
   text-shadow:
     0 0 5px #ff0000,
     0 0 10px #ff0000,
@@ -31,7 +28,6 @@ body {
     0 0 80px #ff0000;
 }
 
-/* Smoother rainbow glow */
 @keyframes rainbowGlow {
 
   0%,
