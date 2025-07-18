@@ -11,12 +11,105 @@ body {
 #welcome {
   position: absolute;
   font-size: 12vw;
-  /* big and responsive */
   font-weight: bold;
   font-family: Arial, sans-serif;
-  user-select: none;
   white-space: nowrap;
-  /* start with red */
+  user-select: none;
+
+  /* Rainbow color animation */
+  animation: rainbowGlow 7s linear infinite;
+
+  /* Initial color */
   color: red;
-  text-shadow: 0 0 10px #fff;
+
+  /* Glowing text shadow */
+  text-shadow:
+    0 0 5px red,
+    0 0 10px red,
+    0 0 20px red,
+    0 0 40px red,
+    0 0 80px red;
+}
+
+/* Animate colors and glow */
+@keyframes rainbowGlow {
+  0% {
+    color: #FF0000;
+    text-shadow:
+      0 0 5px #FF0000,
+      0 0 10px #FF0000,
+      0 0 20px #FF0000,
+      0 0 40px #FF0000,
+      0 0 80px #FF0000;
+  }
+
+  14% {
+    color: #FF7F00;
+    text-shadow:
+      0 0 5px #FF7F00,
+      0 0 10px #FF7F00,
+      0 0 20px #FF7F00,
+      0 0 40px #FF7F00,
+      0 0 80px #FF7F00;
+  }
+
+  28% {
+    color: #FFFF00;
+    text-shadow:
+      0 0 5px #FFFF00,
+      0 0 10px #FFFF00,
+      0 0 20px #FFFF00,
+      0 0 40px #FFFF00,
+      0 0 80px #FFFF00;
+  }
+
+  42% {
+    color: #00FF00;
+    text-shadow:
+      0 0 5px #00FF00,
+      0 0 10px #00FF00,
+      0 0 20px #00FF00,
+      0 0 40px #00FF00,
+      0 0 80px #00FF00;
+  }
+
+  57% {
+    color: #0000FF;
+    text-shadow:
+      0 0 5px #0000FF,
+      0 0 10px #0000FF,
+      0 0 20px #0000FF,
+      0 0 40px #0000FF,
+      0 0 80px #0000FF;
+  }
+
+  71% {
+    color: #4B0082;
+    text-shadow:
+      0 0 5px #4B0082,
+      0 0 10px #4B0082,
+      0 0 20px #4B0082,
+      0 0 40px #4B0082,
+      0 0 80px #4B0082;
+  }
+
+  85% {
+    color: #8B00FF;
+    text-shadow:
+      0 0 5px #8B00FF,
+      0 0 10px #8B00FF,
+      0 0 20px #8B00FF,
+      0 0 40px #8B00FF,
+      0 0 80px #8B00FF;
+  }
+
+  100% {
+    color: #FF0000;
+    text-shadow:
+      0 0 5px #FF0000,
+      0 0 10px #FF0000,
+      0 0 20px #FF0000,
+      0 0 40px #FF0000,
+      0 0 80px #FF0000;
+  }
 }
