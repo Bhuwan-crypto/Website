@@ -16,24 +16,26 @@ body {
   white-space: nowrap;
   user-select: none;
 
-  /* Rainbow color animation */
-  animation: rainbowGlow 7s linear infinite;
+  /* Rainbow glow animation */
+  animation: rainbowGlow 10s ease-in-out infinite;
 
   /* Initial color */
-  color: red;
+  color: #ff0000;
 
-  /* Glowing text shadow */
+  /* Text shadow for glow */
   text-shadow:
-    0 0 5px red,
-    0 0 10px red,
-    0 0 20px red,
-    0 0 40px red,
-    0 0 80px red;
+    0 0 5px #ff0000,
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000,
+    0 0 80px #ff0000;
 }
 
-/* Animate colors and glow */
+/* Smoother rainbow glow */
 @keyframes rainbowGlow {
-  0% {
+
+  0%,
+  100% {
     color: #FF0000;
     text-shadow:
       0 0 5px #FF0000,
@@ -43,7 +45,7 @@ body {
       0 0 80px #FF0000;
   }
 
-  14% {
+  16% {
     color: #FF7F00;
     text-shadow:
       0 0 5px #FF7F00,
@@ -53,7 +55,7 @@ body {
       0 0 80px #FF7F00;
   }
 
-  28% {
+  33% {
     color: #FFFF00;
     text-shadow:
       0 0 5px #FFFF00,
@@ -63,7 +65,7 @@ body {
       0 0 80px #FFFF00;
   }
 
-  42% {
+  50% {
     color: #00FF00;
     text-shadow:
       0 0 5px #00FF00,
@@ -73,7 +75,7 @@ body {
       0 0 80px #00FF00;
   }
 
-  57% {
+  66% {
     color: #0000FF;
     text-shadow:
       0 0 5px #0000FF,
@@ -83,17 +85,7 @@ body {
       0 0 80px #0000FF;
   }
 
-  71% {
-    color: #4B0082;
-    text-shadow:
-      0 0 5px #4B0082,
-      0 0 10px #4B0082,
-      0 0 20px #4B0082,
-      0 0 40px #4B0082,
-      0 0 80px #4B0082;
-  }
-
-  85% {
+  83% {
     color: #8B00FF;
     text-shadow:
       0 0 5px #8B00FF,
@@ -101,15 +93,5 @@ body {
       0 0 20px #8B00FF,
       0 0 40px #8B00FF,
       0 0 80px #8B00FF;
-  }
-
-  100% {
-    color: #FF0000;
-    text-shadow:
-      0 0 5px #FF0000,
-      0 0 10px #FF0000,
-      0 0 20px #FF0000,
-      0 0 40px #FF0000,
-      0 0 80px #FF0000;
   }
 }

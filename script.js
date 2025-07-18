@@ -3,39 +3,21 @@ const welcome = document.getElementById("welcome");
 let x = Math.random() * window.innerWidth;
 let y = Math.random() * window.innerHeight;
 
-// Speed in pixels per second
-let dx = 150;
-let dy = 150;
+let dx = 100; // pixels per second - adjust for speed
+let dy = 100;
 
 let lastTime = null;
 
-// Rainbow colors to cycle through
-const colors = [
-  "#FF0000", // red
-  "#FF7F00", // orange
-  "#FFFF00", // yellow
-  "#00FF00", // green
-  "#0000FF", // blue
-  "#4B0082", // indigo
-  "#8B00FF", // violet
-];
-
-let colorIndex = 0;
-let colorChangeInterval = 100; // ms
-let colorTimer = 0;
-
 function animate(timestamp) {
   if (!lastTime) lastTime = timestamp;
-  const delta = (timestamp - lastTime) / 1000; // seconds elapsed
-  lastTime = timestamp;
+  const delta = (timestamp - lastTime) / 1000;
 
   const rect = welcome.getBoundingClientRect();
 
-  // Move by speed*time
   x += dx * delta;
   y += dy * delta;
 
-  // Bounce horizontally
+  // Bounce off edges
   if (x + rect.width >= window.innerWidth) {
     dx = -Math.abs(dx);
     x = window.innerWidth - rect.width;
@@ -44,7 +26,6 @@ function animate(timestamp) {
     x = 0;
   }
 
-  // Bounce vertically
   if (y + rect.height >= window.innerHeight) {
     dy = -Math.abs(dy);
     y = window.innerHeight - rect.height;
@@ -53,17 +34,10 @@ function animate(timestamp) {
     y = 0;
   }
 
-  welcome.style.left = x + "px";
-  welcome.style.top = y + "px";
+  // Use transform for smoother GPU-accelerated animation
+  welcome.style.transform = `translate(${x}px, ${y}px)`;
 
-  // Handle rainbow color change
-  colorTimer += delta * 1000; // convert to ms
-  if (colorTimer >= colorChangeInterval) {
-    colorIndex = (colorIndex + 1) % colors.length;
-    welcome.style.color = colors[colorIndex];
-    colorTimer = 0;
-  }
-
+  lastTime = timestamp;
   requestAnimationFrame(animate);
 }
 
