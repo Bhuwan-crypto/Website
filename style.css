@@ -1,58 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html,
 body {
-  width: 100%;
+  margin: 0;
+  padding: 0;
   height: 100%;
-  background-color: black;
+  width: 100%;
   overflow: hidden;
+  background-color: black;
 }
 
 #welcome {
   position: absolute;
   font-size: 12vw;
+  /* big and responsive */
   font-weight: bold;
   font-family: Arial, sans-serif;
-  text-shadow: 0 0 20px white;
-  animation: rainbow 5s linear infinite;
+  user-select: none;
   white-space: nowrap;
-}
-
-/* Rainbow color animation */
-@keyframes rainbow {
-  0% {
-    color: red;
-  }
-
-  14% {
-    color: orange;
-  }
-
-  28% {
-    color: yellow;
-  }
-
-  42% {
-    color: green;
-  }
-
-  57% {
-    color: blue;
-  }
-
-  71% {
-    color: indigo;
-  }
-
-  85% {
-    color: violet;
-  }
-
-  100% {
-    color: red;
-  }
+  /* start with red */
+  color: red;
+  text-shadow: 0 0 10px #fff;
 }
