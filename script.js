@@ -2,8 +2,8 @@ const welcome = document.getElementById("welcome");
 
 let x = Math.random() * window.innerWidth;
 let y = Math.random() * window.innerHeight;
-let dx = 0.005;
-let dy = 0.005;
+let dx = 0.0005;
+let dy = 0.0005;
 
 function animate() {
   const rect = welcome.getBoundingClientRect();
