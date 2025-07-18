@@ -3,8 +3,8 @@ const welcome = document.getElementById("welcome");
 let x = window.innerWidth / 2;
 let y = window.innerHeight / 2;
 
-let dx = 100; // pixels per second
-let dy = 100;
+let dx = 30; // pixels per second
+let dy = 30;
 
 let lastTime = null;
 
