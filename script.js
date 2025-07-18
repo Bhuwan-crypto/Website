@@ -1,14 +1,22 @@
 const welcome = document.getElementById("welcome");
-let x = 100, y = 100;
-let dx = 4, dy = 4;
 
-function moveWelcome() {
+let x = Math.random() * window.innerWidth;
+let y = Math.random() * window.innerHeight;
+let dx = 3;
+let dy = 3;
+
+function animate() {
   const rect = welcome.getBoundingClientRect();
-  const screenW = window.innerWidth;
-  const screenH = window.innerHeight;
 
-  if (x + rect.width >= screenW || x <= 0) dx *= -1;
-  if (y + rect.height >= screenH || y <= 0) dy *= -1;
+  // Bounce off left/right
+  if (x + rect.width >= window.innerWidth || x <= 0) {
+    dx *= -1;
+  }
+
+  // Bounce off top/bottom
+  if (y + rect.height >= window.innerHeight || y <= 0) {
+    dy *= -1;
+  }
 
   x += dx;
   y += dy;
@@ -16,7 +24,7 @@ function moveWelcome() {
   welcome.style.left = `${x}px`;
   welcome.style.top = `${y}px`;
 
-  requestAnimationFrame(moveWelcome);
+  requestAnimationFrame(animate);
 }
 
-moveWelcome();
+animate();
