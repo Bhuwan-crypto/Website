@@ -5,8 +5,8 @@ let x = window.innerWidth / 2;
 let y = window.innerHeight / 2;
 
 // Direction & speed (slow)
-let dx = 0.8;
-let dy = 0.8;
+let dx = 0.00008;
+let dy = 0.00008;
 
 function animate() {
   const rect = welcome.getBoundingClientRect();
