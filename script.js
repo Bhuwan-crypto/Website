@@ -1,38 +1,28 @@
 const welcome = document.getElementById("welcome");
 
+// Starting position (centered)
 let x = window.innerWidth / 2;
 let y = window.innerHeight / 2;
 
-let dx = 100; // pixels per second
-let dy = 100;
+// Direction & speed (slow)
+let dx = 1.2;
+let dy = 1.2;
 
-let lastTime = null;
-
-function animate(timestamp) {
-  if (!lastTime) lastTime = timestamp;
-  const delta = (timestamp - lastTime) / 1000; // seconds elapsed
-
+function animate() {
   const rect = welcome.getBoundingClientRect();
 
-  // Update position by speed * time elapsed
-  x += dx * delta;
-  y += dy * delta;
+  // Bounce off walls
+  if (x + rect.width >= window.innerWidth || x <= 0) dx *= -1;
+  if (y + rect.height >= window.innerHeight || y <= 0) dy *= -1;
 
-  // Bounce off edges
-  if (x + rect.width >= window.innerWidth || x <= 0) {
-    dx *= -1;
-    x = Math.min(Math.max(x, 0), window.innerWidth - rect.width);
-  }
-  if (y + rect.height >= window.innerHeight || y <= 0) {
-    dy *= -1;
-    y = Math.min(Math.max(y, 0), window.innerHeight - rect.height);
-  }
+  x += dx;
+  y += dy;
 
   welcome.style.left = `${x}px`;
   welcome.style.top = `${y}px`;
 
-  lastTime = timestamp;
   requestAnimationFrame(animate);
 }
 
-requestAnimationFrame(animate);
+// Start animation loop only ONCE
+animate();
